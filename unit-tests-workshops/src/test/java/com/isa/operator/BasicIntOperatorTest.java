@@ -1,32 +1,42 @@
 package com.isa.operator;
 
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class BasicIntOperatorTest {
 
+    BasicIntOperator basicIntOperator;
+
+    @BeforeEach
+    public void beforeEach() {
+        basicIntOperator = new BasicIntOperator(4,2);
+    }
+
+    @AfterEach
+    public void afterEach() {
+        basicIntOperator = null;
+    }
+
     @Test
     public void testSum() {
-        BasicIntOperator basicIntOperator = new BasicIntOperator(4, 2);
         assertEquals(6, basicIntOperator.sum());
     }
 
     @Test
     public void testDifference() {
-        BasicIntOperator basicIntOperator = new BasicIntOperator(4, 2);
         assertEquals(2, basicIntOperator.difference());
     }
 
     @Test
     public void testProduct() {
-        BasicIntOperator basicIntOperator = new BasicIntOperator(4, 2);
         assertEquals(8, basicIntOperator.product());
     }
 
     @Test
     public void testQuotient() {
-        BasicIntOperator basicIntOperator = new BasicIntOperator(4, 2);
         assertEquals(2, basicIntOperator.quotient());
     }
 }
